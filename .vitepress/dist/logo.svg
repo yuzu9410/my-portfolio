@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7bd37b"/>
+      <stop offset="100%" stop-color="#4ea34e"/>
+    </linearGradient>
+  </defs>
+  <!-- Animal Crossing Leaf Icon -->
+  <path d="M 6 22 C 4 12 14 4 26 6 C 28 16 18 26 8 26 C 6.5 26 5 24.5 6 22 Z" fill="url(#leafGrad)" stroke="#397a39" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Leaf Cutout (Iconic AC Leaf notch) -->
+  <path d="M 20 12 C 18 14 17 17 19 19 C 21 21 24 20 25 18 C 24 16 22 14 20 12 Z" fill="#fdfbf7"/>
+  <!-- Leaf Stem -->
+  <path d="M 8 25 C 7 28 5 29 3 30" stroke="#397a39" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+</svg>

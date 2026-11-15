@@ -137,10 +137,83 @@ html:not(.dark) .VPContent::before {
 }
 
 /* ──────────────────────────────────────────────────────────
-   3. 侧边栏与 Aside 隐藏 & 页面全局自然居中 (针对 layout: page)
+   3. 侧边栏与 Aside：桌面端居中杂志风，移动端开启可爱动森抽屉导航
    ────────────────────────────────────────────────────────── */
-.VPSidebar, .VPDocAside { display: none !important; }
-.VPContent.has-sidebar { padding-left: 0 !important; }
+/* 桌面端隐藏文档侧边栏与右侧目录，保持居中杂志/门户布局 */
+@media (min-width: 960px) {
+  .VPSidebar, .VPDocAside {
+    display: none !important;
+  }
+  .VPContent.has-sidebar {
+    padding-left: 0 !important;
+  }
+}
+
+/* 移动端保留并美化侧边栏抽屉导航，融入动森风格 */
+@media (max-width: 959px) {
+  .VPSidebar {
+    background-color: var(--vp-c-bg) !important;
+    border-right: 3px solid var(--ac-leaf) !important;
+    box-shadow: 4px 0 20px rgba(45, 68, 54, 0.08) !important;
+  }
+  .dark .VPSidebar {
+    background-color: #1a231c !important;
+    border-right-color: var(--ac-leaf-dk) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4) !important;
+  }
+  .VPSidebar .title {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: var(--ac-leaf-dk) !important;
+  }
+  .dark .VPSidebar .title {
+    color: var(--ac-leaf-lt) !important;
+  }
+  .VPSidebarItem .text {
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    border-radius: var(--ac-radius-xs) !important;
+    padding: 6px 12px !important;
+    transition: all 0.2s ease !important;
+  }
+  .VPSidebarItem.is-active .text,
+  .VPSidebarItem .text:hover {
+    color: var(--ac-leaf) !important;
+    background: rgba(92, 184, 92, 0.12) !important;
+  }
+  
+  /* 隐藏原先的全屏下拉菜单，避免与侧边栏抽屉冲突 */
+  .VPNavScreen {
+    display: none !important;
+  }
+
+  /* 顶部搜索框旁的汉堡按钮动森美化与手势 */
+  .VPNavBarHamburger {
+    cursor: pointer !important;
+  }
+  .VPNavBarHamburger:hover .top,
+  .VPNavBarHamburger:hover .middle,
+  .VPNavBarHamburger:hover .bottom {
+    background-color: var(--ac-leaf) !important;
+  }
+
+  /* 移动端顶部二级工具条 (VPLocalNav) 美化 */
+  .VPLocalNav {
+    background-color: var(--vp-c-bg) !important;
+    border-bottom: 2px solid var(--ac-leaf-subtle) !important;
+  }
+  .dark .VPLocalNav {
+    background-color: #1e2720 !important;
+    border-bottom-color: rgba(92, 184, 92, 0.2) !important;
+  }
+  .VPLocalNav .menu-text {
+    font-weight: 800 !important;
+    color: var(--ac-leaf-dk) !important;
+  }
+  .dark .VPLocalNav .menu-text {
+    color: var(--ac-leaf-lt) !important;
+  }
+}
 
 .VPContent {
   width: 100% !important;

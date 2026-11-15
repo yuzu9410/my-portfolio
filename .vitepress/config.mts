@@ -28,8 +28,25 @@ export default defineConfig({
       { text: '💡 个人思考', link: '/thoughts' },
     ],
 
-    // 不需要侧边栏
-    sidebar: [],
+    // 侧边栏（供移动端抽屉导航使用，桌面端保持全宽门户）
+    sidebar: [
+      {
+        text: '🍃 岛民向导 · 快捷导航',
+        items: [
+          { text: '🏠 我的主页', link: '/' },
+          { text: '🕹️ 试玩 Demo', link: '/demo' },
+          { text: '💼 项目经历', link: '/projects' },
+          { text: '💡 个人思考', link: '/thoughts' },
+        ]
+      },
+      {
+        text: '📬 联络与社交',
+        items: [
+          { text: '🐙 GitHub (yuzu9410)', link: 'https://github.com/yuzu9410' },
+          { text: '✉️ 给我写信 (marshtt@163.com)', link: 'mailto:marshtt@163.com' },
+        ]
+      }
+    ],
 
     // 右上角社交链接：仅保留 GitHub
     socialLinks: [
@@ -47,10 +64,10 @@ export default defineConfig({
       provider: 'local'
     },
 
-    // logo 文字
-    logo: { src: '/logo.svg', alt: 'Nana' },
+    // logo 图标
+    logo: '/logo.svg',
 
-    // 移动端菜单文字
+    // 网站标题
     siteTitle: 'Nana · PM',
   },
 
